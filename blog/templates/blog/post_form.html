@@ -1,0 +1,16 @@
+{% extends 'blog/base.html' %}
+{%block content%}
+
+<h1>New Post</h1>
+<form class="post-form" method="POST">
+   <p><input name="name" placeholder="Имя"></p>
+    <p><input name="surname" placeholder="Фамилия"></p>
+   <p><input name="tel" type="tel" placeholder="+38(095)7250222"></p>
+   <p><input
+    {%csrf_token%}
+    {{form.as_p}}
+    <script src="js/medium-editor.js"></script>
+    <script>var editor = new MediumEditor('.editable');</script>
+    <button type="button" class="btn btn-primary">Save</button>
+</form>
+{%endblock%}
